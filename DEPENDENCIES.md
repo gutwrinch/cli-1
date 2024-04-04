@@ -12,8 +12,8 @@ graph LR;
   cacache-->ssri;
   cacache-->unique-filename;
   init-package-json-->npm-package-arg;
+  init-package-json-->npmcli-package-json["@npmcli/package-json"];
   init-package-json-->promzard;
-  init-package-json-->read-package-json;
   init-package-json-->read;
   init-package-json-->semver;
   init-package-json-->validate-npm-package-name;
@@ -127,6 +127,7 @@ graph LR;
   npm-->npmcli-mock-registry["@npmcli/mock-registry"];
   npm-->npmcli-package-json["@npmcli/package-json"];
   npm-->npmcli-promise-spawn["@npmcli/promise-spawn"];
+  npm-->npmcli-redact["@npmcli/redact"];
   npm-->npmcli-run-script["@npmcli/run-script"];
   npm-->npmcli-smoke-tests["@npmcli/smoke-tests"];
   npm-->npmcli-template-oss["@npmcli/template-oss"];
@@ -155,6 +156,7 @@ graph LR;
   npm-registry-fetch-->make-fetch-happen;
   npm-registry-fetch-->minipass-fetch;
   npm-registry-fetch-->npm-package-arg;
+  npm-registry-fetch-->npmcli-redact["@npmcli/redact"];
   npm-registry-fetch-->proc-log;
   npmcli-arborist-->bin-links;
   npmcli-arborist-->cacache;
@@ -322,8 +324,8 @@ graph LR;
   iconv-lite-->safer-buffer;
   ignore-walk-->minimatch;
   init-package-json-->npm-package-arg;
+  init-package-json-->npmcli-package-json["@npmcli/package-json"];
   init-package-json-->promzard;
-  init-package-json-->read-package-json;
   init-package-json-->read;
   init-package-json-->semver;
   init-package-json-->validate-npm-package-license;
@@ -541,6 +543,7 @@ graph LR;
   npm-->npmcli-mock-registry["@npmcli/mock-registry"];
   npm-->npmcli-package-json["@npmcli/package-json"];
   npm-->npmcli-promise-spawn["@npmcli/promise-spawn"];
+  npm-->npmcli-redact["@npmcli/redact"];
   npm-->npmcli-run-script["@npmcli/run-script"];
   npm-->npmcli-smoke-tests["@npmcli/smoke-tests"];
   npm-->npmcli-template-oss["@npmcli/template-oss"];
@@ -588,6 +591,7 @@ graph LR;
   npm-registry-fetch-->minipass;
   npm-registry-fetch-->minizlib;
   npm-registry-fetch-->npm-package-arg;
+  npm-registry-fetch-->npmcli-redact["@npmcli/redact"];
   npm-registry-fetch-->proc-log;
   npmcli-agent-->agent-base;
   npmcli-agent-->http-proxy-agent;
@@ -826,9 +830,9 @@ packages higher up the chain.
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
  - pacote, libnpmversion
- - @npmcli/run-script, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, npm-profile
+ - @npmcli/run-script, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, init-package-json, npm-profile
  - @npmcli/package-json, npm-registry-fetch
- - @npmcli/git, make-fetch-happen, @npmcli/config, init-package-json
+ - @npmcli/git, make-fetch-happen, @npmcli/config
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, read-package-json, promzard
  - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, normalize-package-data, npm-packlist, bin-links, nopt, npmlog, parse-conflict-json, @npmcli/mock-globals, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate
